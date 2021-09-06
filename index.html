@@ -11,9 +11,37 @@
 </head>
 <body>
     <div class="container">
-        <canvas id="myCanvas" width="1200" height="200" style="border:1px solid #d3d3d3;">
+        <canvas id="myCanvas" width="1200" height="200">
             Your browser does not support the HTML canvas tag.
         </canvas>
+        <div class="tag1">
+            <main class="static">
+                <div class="head">loyal</div>
+                <div class="vertical"></div>
+                <div class="point"></div>
+            </main>
+        </div>
+        <div class="tag2">
+            <main class="static">
+                <div class="head">puch</div>
+                <div class="vertical"></div>
+                <div class="point"></div>
+            </main>
+        </div>
+        <div class="tag3">
+            <main class="static">
+                <div class="head">rock</div>
+                <div class="vertical"></div>
+                <div class="point"></div>
+            </main>
+        </div>
+        <div class="tag4">
+            <main class="static">
+                <div class="head">bass</div>
+                <div class="vertical"></div>
+                <div class="point"></div>
+            </main>
+        </div>
     </div>
     <div class="buttons">
         <span class="glyphicon glyphicon-volume-up"></span>
@@ -35,8 +63,7 @@
         var flag = true;
         var img = true;
         
-
-        function progressBar() {
+        function current() {
             ctx.fillStyle =  "rgb(221, 178, 191)";
             var time = setInterval( () => {
                 console.log(count)
@@ -54,8 +81,8 @@
             }, 200)
         }
 
-        var progressAnimating = false;
-        function mainLoop() {
+        var animation = false;
+        function main() {
             ctx.clearRect(0,0,width,height);
             ctx.fillStyle = "rgb(223, 223, 223)"
             for(let i = 0; i < 200; i++){
@@ -69,14 +96,14 @@
                 if(img){
                     img = false;
                     flag = true;
-                    requestAnimationFrame(progressBar);
+                    requestAnimationFrame(current);
                     att.value = "glyphicon glyphicon-pause";
                 }
                 else{
-                    progressAnimating = false;
+                    animation = false;
                     flag = false;
                     img = true;
-                    cancelAnimationFrame(progressBar);
+                    cancelAnimationFrame(current);
                     att.value = "glyphicon glyphicon-play";
                 }
                 icon.setAttributeNode(att)
@@ -88,9 +115,9 @@
         }
 
         window.addEventListener("load",() => {
-            if (!progressAnimating) {
-                requestAnimationFrame(mainLoop);
-                progressAnimating = true;
+            if (!animation) {
+                requestAnimationFrame(main);
+                animation = true;
             }
         });
     </script>        

@@ -1,9 +1,12 @@
 .container {
     margin: auto;
     margin-top: 30px;
+    position: relative;
+    color: white
 }
 .container canvas{
     padding: 10px;
+    padding-top: 100px;
 }
 
 .buttons {
@@ -14,7 +17,7 @@
 }
 
 .buttons >* {
-    margin: 1px;
+    margin: 0;
     color:aqua;
     border: 1px solid gray;
     padding: 10px;
@@ -22,6 +25,64 @@
     border-radius: 20px;
 }
 .buttons button {
-    width: 120px;
+    width: 100px;
     font-size: 20px;
+    background-color: white;
+}
+
+.static {
+    position: relative;
+    width: 100px;
+}
+
+.head {
+    margin: auto;
+    border-radius: 5px;
+    text-align: center;
+}
+.vertical {
+    position:absolute;
+    width: 3px;
+    height: 100px;
+    left: 50%;
+}
+.point {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -100px;
+    left: 48%;
+}
+.tag1 {
+    position: absolute;
+    left: 40px;
+    top: 50px
+}
+.tag1 div{
+    background-color: rgb(43, 223, 223);
+}
+.tag2 {
+    position: absolute;
+    left: 400px;
+    top: 50px
+}
+.tag2 div{
+    background-color: rgb(34, 250, 81);
+}
+.tag3 {
+    position: absolute;
+    left: 600px;
+    top: 50px
+}
+.tag3 div{
+    background-color: rgb(235, 25, 183);
+}
+.tag4 {
+    position: absolute;
+    left: 900px;
+    top: 50px
+}
+.tag4 div{
+    background-color: rgb(29, 84, 235);
 }
